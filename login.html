@@ -9,23 +9,22 @@
 <style>
     table
     {
-        border: 2px solid #353A46;
-        background-color: #3ABAF1;
+        position: absolute;
+        left: 60%;
+        margin-left: -280;
+        top: 60%;
+        margin-top: -280;
+        border: 1px solid #c6d9ea;
+        background: #c6d9ea; /* Old browsers */
+        background: -moz-linear-gradient(-45deg, #c6d9ea 5%, #8baed7 35%, #0651ac 94%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(-45deg, #c6d9ea 5%,#8baed7 35%,#0651ac 94%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(135deg, #c6d9ea 5%,#8baed7 35%,#0651ac 94%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c6d9ea', endColorstr='#0651ac',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+        border-radius: 10px;
+        padding: 15px;
+
     }
-    input[type=password]
-    {
-        width: 100%;
-        padding: 8px 20px;
-        border: 2px solid #ccc;
-        box-sizing: border-box;
-    }
-    input [type=text]
-    {
-        width: 100%;
-        padding: 8px 20px;
-        border: 2px solid #ccc;
-        box-sizing: border-box;
-    }
+    
     img
     {
     width: 100px;
@@ -33,13 +32,15 @@
     }
     label
     {
+        color: white;
         font-size: 14px;
         font-weight: bold;
         font-family: arial;
     }
-    input [type=submit]
+
+    #button
     {
-        background-color: #1C94C8;
+        background-color: #2D6CE2;
         color: white;
         padding: 8px 10px;
         margin: 8px 0px;
@@ -47,18 +48,96 @@
         cursor: pointer;
         width: 40%;
     }
+    a{
+        text-decoration: none;
+    }
+    a:hover
+    {
+        color: #FF0000; 
+        text-decoration: underline
+     }
+    #text
+    {
+        width: 100%;
+        padding: 8px 20px;
+        border: 2px solid #ccc;
+        box-sizing: border-box;
+    }
+    header
+    {
+        display: flex;
+        min-height: 70px;
+        justify-content: space-between;
+        background: #bed8ee; /* Old browsers */
+        background: -moz-linear-gradient(-45deg, #bed8ee 12%, #379ee3 53%, #bed8ee 92%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(-45deg, #bed8ee 12%,#379ee3 53%,#bed8ee 92%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(135deg, #bed8ee 12%,#379ee3 53%,#bed8ee 92%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bed8ee', endColorstr='#bed8ee',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+        align-items: center;
+        border-radius: 5px;
+    }
+    .logo
+    {
+        display: flex;
+    }
+    .logo img
+    {
+        height: 80px;
+        margin-left: 20px;
+    }
+    body
+    {
+        font-family: sans-serif;
+        margin: 0;
+        background: #bed8ee; /* Old browsers */
+        background: -moz-linear-gradient(-45deg, #bed8ee 12%, #379ee3 53%, #bed8ee 92%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(-45deg, #bed8ee 12%,#379ee3 53%,#bed8ee 92%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(135deg, #bed8ee 12%,#379ee3 53%,#bed8ee 92%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bed8ee', endColorstr='#bed8ee',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    }
+    h1
+    {
+        color: #B63813;
+        font-weight: bold;
+        margin-left: 0px;
+    }
+   
+  
+    @media (max-width:700px){
+        header {
+            flex-direction: column;
+        }
+        nav{
+            padding: 10px 0px;
+        }
+        table {
+            flex-direction: column;
+        }
+        
+    }
+
 
 </style>
+<body>
+<header>
+    <div class="logo">
+        <img src="espartan_final.png" alt="logo de la compañia">
+        <h1 class="nombre-empresa">SPARTAN</h2>
+    </div>
+</header>
 <center>
 <form method="post" action="login.php">
     <table>
-        <tr><td colspan="2" style="background-color: #33A8DB; padding-bottom:5px; padding-top:5px;"><label>Login</label></td></tr>
-        <tr><td align="center" rowspan="5"></td><img src="candado.jpg"/><td>Usuario</td></tr>
-        <tr><td><input type="text" name="txtusuario"/></td></tr>
+        <tr><td colspan="2" id="tb"><label>LOGIN</label></td></tr>
+        <tr><td align="left" rowspan="5"><img src="candado.jpg"/></td><td><label>Usuario</label></td></tr>
+        <tr><td><input type="text" name="txtusuario" id="text"/></td></tr>
         <tr><td><label>Password</label></td></tr>
-        <tr><td><input type="password" name="txtpassword"/></td></tr>
-        <tr><td><input type="submit" value="Ingresar"/></td></tr>
+        <tr><td><input type="password" name="txtpassword" id="text"/></td></tr>
+        <tr><td><input type="submit" value="Ingresar" id="button"/></td></tr>
+        <tr><td colspan="2" align="center"><a href="https://www.mozilla.org/es-ES/"><h2><label>Registrate</label></h2></a></td></tr>
+        <tr><td colspan="2" align="center"><a href="https://www.mozilla.org/es-ES/"><h2><label>Reestablecer contraseña</label></h2></a></td></tr>
     </table>
 </form>
 </center>
+</body>
 </html>
